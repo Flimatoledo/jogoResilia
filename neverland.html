@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neverland</title>
+</head>
+
+<body>
+  <header>
+    <h1>O que será que essa aventura nos espera?</h1>
+  </header>
+  <main>
+      <p>Neverland é um orfanato que só permite a entrada de homens. <br>
+      Panda, Link e Jurandiro são os mais velhos da turma, então por isso eles comandam a brincadeira no jardim. <br>
+    Mas eles nem imaginam tudo que virá pela frente. Vamos começar?</p>
+    
+
+    <p>Selecione seu personagem?</p>
+    <div class="button">
+      <button onclick="startPanda()"> Panda: caracteristica força</button>
+      <button onclick="startLink()"> Link: caracteristica agilidade</button>
+      <button onclick="startJurandiro()"> Jurandiro, caracteristica inteligencia</button>
+    </div>
+
+  </main>
+  <script>
+
+    function startPanda() {
+      var name = "Panda"
+      var confirmChar = confirm(`Deseja selecionar o ${name} ?`);
+      if (confirmChar == true) {
+        startGame();
+      }
+    }
+
+    function startLink() {
+      var name = "Link"
+      var confirmChar = confirm(`Deseja selecionar o ${name} ?`);
+      if (confirmChar == true) {
+        startGame();
+      }
+    }
+
+    function startJurandiro() {
+      var name = "Jurandiro"
+      var confirmChar = confirm(`Deseja selecionar o ${name} ?`);
+      if (confirmChar == true) {
+        startGame();
+      }
+    }
+
+    function startGame() {
+      alert("Você esta tranquilamente brincando na fazenda quando observa que ao redor de todo o jardim existe um pequeno cercado.")
+
+      var irCercado = prompt("O que você faz? \n Digite 0 para continuar brincando \n Digite 1 para atravessar o cercado.");
+
+      if (confirmChoice(irCercado) == false) {
+        startGame();
+      }
+      if (irCercado == 0) {
+        game1_1();
+      } else if (irCercado == 1) {
+        game1_2();
+      }
+    }
+
+    function game1_2() {
+      alert("Investigando o local, vocês descobrem que existe uma grande muralha que fecha todo o entorno do jardim de vocês! \n\n Porem, bem escondido, existe um corredor escuro! Não há nenhum tipo de luz nele, e vocês não conseguem ver aonde esse corredor vai dar!")
+
+      var corredor = prompt("Devemos entrar no corredor? \n\n Digite 0 para não entrar. \n Digite 1 para entrar.");
+
+      if (confirmChoice(corredor) == false) {
+
+        game1_2();
+
+      } if (corredor == 1) {
+
+        alert("O corredor é muito escuro e bem maior do que vocês imaginavam!!")
+        alert("Voces acabam se perdendo, e não conseguem mais voltar!")
+        alert("Nunca mais ouviram falar sobre vocês!!!")
+        derrota();
+
+      } else if (corredor == 0) {
+
+        alert("Vocês decidem não ir e retornam para casa!\n\n Vocês voltam assustados com a nova descoberta.. \n\n O Tutor percebe algo estranho e pergunta o que aconteceu!!")
+        game2_1();
+
+      }
+
+    }
+
+
+
+    function game1_1() {
+      alert("Você continua brincando tranquilamente com seus dois amigos sem ultrapassar o cercado!")
+      alert("Anoitece e vocês vão para o jantar.")
+
+      var pergunta = prompt("Durante o jantar surge o questionamento sobre voltar a ir alem do cercado. \n\n O que você faz? \n Digite 0 para continuar sem ir \n Digite 1 para mudar de ideia e ir além do cercado.")
+
+      if (confirmChoice(pergunta) == false) {
+        game1_1();
+      }
+      if (pergunta == 0) {
+        alert("Vocês decidem não ir!")
+        alert("Apos o jantar, vocês vão para a biblioteca, aonde nela existe um livro misterioso!");
+        alert("Esse livro misterioso contém um mapa, e instruções para fugir de algo que parece uma fazenda");
+        alert("Vocês ficam curiosos para saber mais sobre esse livro e logo surge a duvida sobre contar ou não para o Tutor.")
+        game2_1();
+
+      } else if (pergunta == 1) {
+
+        alert("Vocês combinam de ir além do cercado de manhã bem cedo");
+        alert("Apos o jantar, vocês vão para a biblioteca, aonde nela existe um livro misterioso!");
+        alert("Esse livro misterioso contém um mapa, e instruções para fugir de algo que parece uma fazenda");
+        alert("Vocês ficam curiosos para saber mais sobre esse livro e logo surge a duvida sobre contar ou não para o Tutor.")
+        game2_2();
+      }
+    }
+
+    function game2_1() {
+      var duvida = prompt("Será que devemos contar ao Tutor? \n\n O que fazer?  \n Digite 0 para não contar. \n Digite 1 para contar.")
+
+      if (confirmChoice(duvida) == false) {
+        game2_1();
+      }
+
+      if (duvida == 0) {
+        alert("Sem saber qual seria a reação do Tutor, vocês resolvem não contar.")
+        game3();
+
+      } else if (duvida == 1) {
+
+        alert("Vocês decidem contar!")
+        alert("Nem nos piores sonhos vocês suspeitariam de tudo que está acontecendo! O Tutor conta a vocês toda a verdade .....");
+        alert("Está é uma fazenda aonde vocês serão entregues a grandes monstros de outro mundo e serão servidos como banquetes.");
+        alert("O Tutor então prende vocês e os envia para serem servidos aos monstros.");
+        derrota();
+
+      }
+    }
+
+    function game2_2() {
+      alert("Amanhece e vocês estão a caminho do cercado.")
+      alert("Investigando o local, vocês descobrem que existe uma grande muralha que fecha todo o entorno do jardim de vocês!")
+      alert("Porem, bem escondido, existe um corredor escuro! Não há nenhum tipo de luz nele, e vocês não conseguem ver aonde esse corredor vai dar!")
+
+      var corredor = prompt("Devemos entrar no corredor? \n\n Digite 0 para não entrar. \n Digite 1 para entrar.")
+
+      if (confirmChoice(corredor) == false) {
+        game2_2();
+      }
+      if (corredor == 0) {
+        alert("Vocês decidem não ir e retornam para casa!")
+        alert("Vocês voltam assustados com a nova descoberta, qua batia totalmente com o conteudo do livro.")
+        alert("O Tutor percebe algo estranho e pergunta o que aconteceu!!")
+        game2_1();
+
+      } else if (corredor == 1) {
+        alert("O corredor é muito escuro e bem maior do que vocês imaginavam!!")
+        alert("Voces acabam se perdendo, e não conseguem mais voltar!")
+        alert("Nunca mais ouviram falar sobre vocês!!!")
+        derrota();
+      }
+    }
+
+    function game3() {
+      alert("Percebendo que vocês estavam em panico, o funcionário Dom resolve perguntar o que havia acontecido")
+
+      var funcionario = prompt("Confiar em Dom e contar tudo para ele? \n\n Digite 0 para nao contar. \n Digite 1 para contar.")
+      if (confirmChoice(funcionario) == false) {
+        game3();
+      } if (funcionario == 0) {
+        alert("Voces não contam!")
+        alert("O tempo passa e vocês não conseguem desvendar mais nenhuma pista")
+        alert("Então o Tutor chama vocês para uma conversa!!!!!")
+        alert("Nem nos piores sonhos vocês suspeitariam de tudo que está acontecendo! O Tutor conta a vocês toda a verdade .....");
+        alert("Está é uma fazenda aonde vocês serão entregues a grandes monstros de outro mundo e serão servidos como banquetes.");
+        alert("O Tutor então prende vocês e os envia para serem servidos aos monstros.");
+        derrota();
+      } else if (funcionario == 1) {
+        alert("Vocês contam!")
+        alert("Dom se mostrou um amigo leal, explicando todo o conteudo do livro!")
+        alert("Ele contou toda a história. Informou que aquela fazenda era para fornecer carne humana como banquete para monstros de outro mundo!!")
+        alert("Dom explicou tambem, que só dava para fugir por duas maneiras: levando tochas de fogo tochas de fogo para iluminar o corredor e ...")
+        alert("Dom não conseguiu explicar o restante pois o Tutor o chamou para um conversa");
+        game4();
+      }
+    }
+
+    function game4() {
+      alert("Lembrando do que o Dom havia contado, vocês estão agora na sala de oficina da fazenda.")
+      alert("Nessa sala existe uma grande quantidade de ferramentas, como madeira e querosene e algumas facas.")
+
+      var oficina = prompt("O que iremos recolher? \n\n Digite 0 para madeiras e querosene. \n Digite 1 para facas.")
+
+      if (confirmChoice(oficina) == false) {
+        game4()
+      } if (oficina == 0) {
+        alert("Seguindo a dica do Dom, a escolha é de madeira e querosene para fazer tochas no dia da fuga para iluminar o corredor")
+        game5_1()
+      } else if (oficina == 1) {
+        alert("Sem acreditar muito em Dom, escolhemos as facas, pois parecem ser mais uteis que a madeira e o querosene!")
+        game5_2()
+
+      }
+    }
+
+    function game5_1() {
+      alert("O Tutor e o Dom começam uma grande discussão!!")
+      alert("Essa pode ser a chances de vocês fugirem!")
+
+      var fugir = prompt("Vamos fugir? \n\n Digite 0 para não fugir. \n Digite 1 para fugir.")
+
+      if (confirmChoice(fugir) == false) {
+        game5_1()
+      } if (fugir == 0) {
+        alert("Vocês decidem não fugir!")
+        alert("A briga entre o Tutor e o Dom foi motivada porque foi descoberto que o Dom nos ajudou")
+        alert("O Tutor captura vocês e os envia para o banquete dos monstros")
+        derrota()
+      } else if (fugir == 1) {
+        alert("Vocês pegam o material que foi recolhido na oficina!")
+        alert("Chegam na frente do corredor, acendem as tochas e conseguem atravessar esse desafio!")
+        vitoria()
+      }
+    }
+
+    function game5_2(){
+      alert("O Tutor e o Dom começam uma grande discussão!!")
+      alert("Essa pode ser a chances de vocês fugirem!")
+      alert("A briga entre o Futor e o Dom foi motivada porque foi descoberto que o Dom nos ajudou")
+      alert("Durante a briga, o Tutor fica por um momento sozinho na sala dele")
+
+      var matar = prompt("Devemos usar a faca para matar o Tutor? \n\n Digite 0 para não matar. \n Digite 1 para matar.")
+
+      if (confirmChoice(matar) == false){
+        game5_2()
+      } if (matar == 0){
+        alert("Apesar de termos tido pena do Tutor, ele não teve o mesmo sentimento!!!!!")
+        alert("O Tutor captura vocês e os envia para o banquete dos monstros")
+        derrota()
+      } else if (matar == 1 ){
+        alert("Lembram quem o Dom não conseguiu completar as duas maneiras de fugir da fazenda??")
+        alert("Matar o Tutor era a segunda forma, agora ele não consegue se comunicar com os monstros e vocês conseguem fugir com calma pelo corredor!!")
+        vitoria();
+      }
+}
+
+
+
+
+    function confirmChoice(choice) {
+      if (choice == 0 || choice == 1 || choice == null) {
+        return true
+      }
+      alert("É necessário escolher 0 ou 1")
+      return false
+    }
+
+    function derrota() {
+      var derrota = confirm("Você perdeu! \n Jogar novamente?")
+      if (derrota == true) {
+        startGame();
+      }
+    }
+
+    function vitoria() {
+      var vitoria = confirm("Parabéns você conseguiu fugir! \n Jogar novamente?")
+      if (vitoria == true) {
+        startGame();
+      }
+    }
+
+
+
+  </script>
+
+</body>
+
+</html>
