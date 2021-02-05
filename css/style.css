@@ -1,0 +1,105 @@
+body{
+  background: linear-gradient(to right top, #d1ece7, #888f88);
+  
+}
+
+#header{
+  border-bottom: 1px solid;
+  padding: 20px 20px 20px 20%;
+  background-color: #1b1b03;
+}
+
+h1{
+  
+  cursor: pointer;
+  font-size: 3em;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(240, 243, 45);
+}
+
+h1:hover{
+  color: #3df073;
+  transition: 2s;
+}
+.main{
+  min-height: 91vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.butt{
+  display: flex;
+  justify-content: space-evenly;
+}
+.btns, .button1{
+  box-shadow: 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+
+.btns:hover, .button1:hover{
+  background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+
+}
+.container{
+  border-radius: 5px;
+  padding: 1em 2em;
+  background:linear-gradient(to right bottom, rgba(233, 216, 216, 0.8), rgba(48, 17, 17, 0.363));
+  width: 60%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imagem{
+  background: url(../img/casa.jpg)no-repeat center center ; 
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 450px;
+}
+
+.imagem2{
+  background: url(../img/cercado.jpg)no-repeat center center ; 
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 450px;
+}
+
+
+#h1{
+  text-align: center;
+  font-size: 25px;
+}
+
+#intro{
+font-size: 20px;
+}
+
+label{
+  padding: 2px;
+}
+
+#choose{
+  margin: 1em 0em;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 16px;
+}
+
